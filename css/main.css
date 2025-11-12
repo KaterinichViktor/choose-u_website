@@ -74,6 +74,23 @@
     --transition: all 0.3s ease;
 }
 
+/* Theme 5 - Ocean Mist */
+[data-theme="theme5"] {
+    --primary-color: #204051;
+    --secondary-color: #3B6978;
+    --accent-color: #84A9AC;
+    --bg-color: #E7DFD5;
+    --bg-light: #F2EDE9;
+    --text-color: #1B262C;
+    --text-light: #84A9AC;
+    --gray: #C7C7C7;
+    --border-color: #A8B4B5;
+    --shadow: 0 1px 3px rgba(32, 64, 81, 0.1);
+    --shadow-lg: 0 10px 25px rgba(32, 64, 81, 0.15);
+    --transition: all 0.3s ease;
+  }
+  
+
 
 
 
