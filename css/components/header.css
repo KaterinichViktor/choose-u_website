@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 /* Logo */
@@ -35,11 +36,13 @@
     width: auto;
 }
 
-/* Desktop Navigation */
+/* Desktop Navigation - Inside header-right */
 .desktop-nav {
     display: none;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding-right: 1rem;
+    border-right: 1px solid #e5e7eb;
 }
 
 /* Navigation Dropdown Container */
@@ -139,6 +142,13 @@
     font-weight: 600;
 }
 
+/* Dropdown Divider */
+.dropdown-divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 0.5rem 0;
+}
+
 /* Regular Nav Link */
 .nav-link {
     color: #374151;
@@ -152,11 +162,13 @@
     color: #2563eb;
 }
 
-/* Header Right Section */
+/* Header Right Section - Contains all navigation elements */
 .header-right {
     display: none;
     align-items: center;
     gap: 1.5rem;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 /* Language Dropdown */
@@ -334,7 +346,7 @@
         padding: 1rem 2rem;
     } */
 
-    /* Show desktop navigation */
+    /* Show desktop navigation and header right */
     .desktop-nav {
         display: flex;
     }

@@ -5,10 +5,17 @@
     box-sizing: border-box;
 }
 
-:root {
+/* ========================================
+   COLOR THEMES - Switch between palettes
+   ======================================== */
+
+/* Theme 1 - Default (Blue) */
+:root,
+[data-theme="theme1"] {
     --primary-color: #2563eb;
     --secondary-color: #64748b;
     --accent-color: #0ea5e9;
+    --gray: #CBCBCB;
     --text-color: #1e293b;
     --text-light: #64748b;
     --bg-color: #ffffff;
@@ -19,6 +26,59 @@
     --transition: all 0.3s ease;
 }
 
+/* Theme 2 - Warm Earth */
+[data-theme="theme2"] {
+    --primary-color: #9F8772;    
+    --secondary-color: #C8DBBE;  
+    --accent-color: #665A48;     
+    --gray: #CBCBCB;
+    --text-color: #665A48;       
+    --text-light: #9F8772;      
+    --bg-color: #EDE4E0;         
+    --bg-light: #F7F4F2;        
+    --border-color: #D7CFC7;    
+    --shadow: 0 1px 3px rgba(102, 90, 72, 0.1);
+    --shadow-lg: 0 10px 25px rgba(102, 90, 72, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Theme 3 - Ocean Blue */
+[data-theme="theme3"] {
+    --primary-color: #89A8B2;   
+    --secondary-color: #B3C8CF;  
+    --accent-color: #E5E1DA;     
+    --gray: #CBCBCB;
+    --text-color: #3F4E55;       
+    --text-light: #B3C8CF;      
+    --bg-color: #F1F0E8;        
+    --bg-light: #FFFFFF;          
+    --border-color: #D9D9D4;    
+    --shadow: 0 1px 3px rgba(137, 168, 178, 0.1);
+    --shadow-lg: 0 10px 25px rgba(137, 168, 178, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Theme 4 - Dark Green */
+[data-theme="theme4"] {
+    --primary-color: #3F4E4F;    
+    --secondary-color: #A27B5C;  
+    --accent-color: #DCD7C9;    
+    --gray: #CBCBCB;
+    --text-color: #2C3639;       
+    --text-light: #A27B5C;       
+    --bg-color: #DCD7C9;         
+    --bg-light: #EDEBE6;        
+    --border-color: #B0A998;     
+    --shadow: 0 1px 3px rgba(44, 54, 57, 0.1);
+    --shadow-lg: 0 10px 25px rgba(44, 54, 57, 0.1);
+    --transition: all 0.3s ease;
+}
+
+
+
+
+
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -26,6 +86,12 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme transitions for all elements */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .container {
@@ -34,12 +100,18 @@ body {
     padding: 0 20px;
 }
 
-.color-box-1 {
+/* .color-box-1 {
     margin: 0;
     padding: 0;
     width: 100%;
     padding: 20px;
 }
+.color-box-2 {
+    background-color: #f0f0f0;
+}
+.color-box-3 {
+    background-color: #f0f0f0;
+} */
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {

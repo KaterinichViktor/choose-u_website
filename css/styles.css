@@ -1,0 +1,23 @@
+/* ================================================
+   Main Stylesheet - Imports all CSS modules
+   ================================================ */
+
+/* Base Styles */
+@import url('main.css');
+
+/* Component Styles */
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/theme-switcher.css');
+@import url('components/carousel.css');
+@import url('components/spinner.css');
+
+/* Page-Specific Styles */
+@import url('pages/index.css');
+
+/* Add more page imports as needed:
+   @import url('pages/about.css');
+   @import url('pages/contact.css');
+   etc.
+*/
+

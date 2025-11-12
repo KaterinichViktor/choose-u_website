@@ -1,0 +1,101 @@
+/* Theme Switcher Component */
+
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.theme-switcher:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switcher-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-btn.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Theme 1 - Default Blue */
+.theme-btn[data-theme="theme1"] {
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+}
+
+/* Theme 2 - Warm Earth */
+.theme-btn[data-theme="theme2"] {
+    background: linear-gradient(135deg, #9F8772 0%, #C8DBBE 100%);
+}
+
+/* Theme 3 - Ocean Blue */
+.theme-btn[data-theme="theme3"] {
+    background: linear-gradient(135deg, #89A8B2 0%, #B3C8CF 100%);
+}
+
+/* Theme 4 - Dark Green */
+.theme-btn[data-theme="theme4"] {
+    background: linear-gradient(135deg, #3F4E4F 0%, #A27B5C 100%);
+}
+
+/* Checkmark for active theme */
+.theme-btn.active::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .theme-switcher {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+    
+    .theme-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+

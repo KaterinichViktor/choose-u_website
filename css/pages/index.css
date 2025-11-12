@@ -1,0 +1,102 @@
+/* Index Page Specific Styles */
+
+/* Color Boxes - Main Layout Containers */
+.color-box-1 {
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.color-box-2 {
+    background-color: var(--bg-color);
+}
+
+.color-box-3 {
+    background-color: var(--bg-color);
+}
+
+/* Hero Logo Link */
+.header-logo a {
+    width: 40px;
+    height: 40px;
+}
+
+/* Mobile Dropdown Arrow SVG */
+.mobile-dropdown-button .dropdown-arrow {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Section 1 - Hero Section */
+.section-1 {
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-1 p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+/* Section 2 */
+.section-2 {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--gray);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+/* Section 3 */
+.section-3 {
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.section-3 p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+/* Section 4 */
+.section-4 {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.section-4 p {
+    font-size: 1.25rem;
+    color: var(--bg-light);
+    margin-top: 1rem;
+}
+
+.section-4 h1 {
+    color: var(--bg-color);
+}
+
+/* Section 5 */
+.section-5 {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+.section-5 p {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+

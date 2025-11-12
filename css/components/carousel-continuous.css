@@ -1,0 +1,170 @@
+/* Carousel Continuous Mode - Infinite smooth scroll */
+
+.carousel-section {
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.carousel-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Carousel Header */
+.carousel-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.carousel-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.carousel-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Carousel Wrapper - No buttons in continuous mode, but keep same padding for consistent card sizing */
+.carousel-wrapper {
+    position: relative;
+    padding: 0 60px; /* Match pagination mode for consistent card widths */
+}
+
+/* Carousel Track Container */
+.carousel-track-container {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0; /* Prevent border cut-off on hover */
+    margin: -10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: none; /* No snap transitions in continuous mode */
+    will-change: transform;
+}
+
+/* Pause on hover */
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* Carousel Cards */
+.carousel-card {
+    min-width: calc(33.333% - 14px);
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+/* Card Icon */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Card Content */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    color: var(--accent-color);
+    gap: 0.75rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .carousel-card {
+        min-width: calc(50% - 10px);
+    }
+    
+    .carousel-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        padding: 0 50px; /* Match pagination button spacing */
+    }
+    
+    .carousel-card {
+        min-width: 100%;
+    }
+    
+    .carousel-title {
+        font-size: 1.75rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-wrapper {
+        padding: 0 35px; /* Match pagination button spacing */
+    }
+    
+    .carousel-container {
+        padding: 0 10px;
+    }
+    
+    .carousel-card {
+        padding: 1.5rem;
+    }
+}
+

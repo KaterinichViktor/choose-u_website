@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Component - Areas of Work</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/carousel.css">
+</head>
+<body style="padding: 40px; background-color: var(--bg-light);">
+
+    <h1 style="text-align: center; margin-bottom: 40px;">Carousel Component Demo</h1>
+    
+    <!-- Mode Switcher -->
+    <div style="text-align: center; margin-bottom: 30px;">
+        <button onclick="switchMode('pagination')" style="padding: 10px 20px; margin: 0 10px; cursor: pointer; border: 2px solid var(--primary-color); background: var(--primary-color); color: white; border-radius: 8px; font-weight: 600;">Pagination Mode</button>
+        <button onclick="switchMode('continuous')" style="padding: 10px 20px; margin: 0 10px; cursor: pointer; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 8px; font-weight: 600;">Continuous Scroll Mode</button>
+    </div>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="carousel-container" data-scroll-mode="pagination">
+            <!-- Section Title -->
+            <div class="carousel-header">
+                <h2 class="carousel-title">Our Areas of Work</h2>
+                <p class="carousel-subtitle">Comprehensive support services for veterans and their families</p>
+            </div>
+
+            <!-- Carousel Wrapper -->
+            <div class="carousel-wrapper">
+                <!-- Previous Button -->
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+                <!-- Carousel Track -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        
+                        <!-- Card 1 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Psychological Support</h3>
+                            <p class="card-description">Professional counseling and therapy services for PTSD, anxiety, and mental health challenges faced by veterans.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Family Support</h3>
+                            <p class="card-description">Comprehensive programs to help families cope with the challenges of military service and reintegration.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Career Training</h3>
+                            <p class="card-description">Job placement assistance, skills training, and career development programs for transitioning veterans.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Housing Assistance</h3>
+                            <p class="card-description">Support with finding affordable housing, rental assistance, and home adaptation for disabled veterans.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Educational Programs</h3>
+                            <p class="card-description">Scholarship opportunities, tutoring services, and educational guidance for veterans pursuing further education.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Health & Wellness</h3>
+                            <p class="card-description">Physical rehabilitation, fitness programs, and holistic wellness services to support veteran health.</p>
+                            <a href="#" class="card-link">Learn more →</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+                <button class="indicator" data-slide="4" aria-label="Go to slide 5"></button>
+                <button class="indicator" data-slide="5" aria-label="Go to slide 6"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Load saved mode on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('carouselMode') || 'pagination';
+            const container = document.querySelector('.carousel-container');
+            if (container) {
+                container.setAttribute('data-scroll-mode', savedMode);
+            }
+            
+            // Update button styles
+            updateButtonStyles(savedMode);
+        });
+        
+        // Mode switcher for demo
+        function switchMode(mode) {
+            // Save mode to localStorage
+            localStorage.setItem('carouselMode', mode);
+            
+            // Update container attribute
+            const container = document.querySelector('.carousel-container');
+            container.setAttribute('data-scroll-mode', mode);
+            
+            // Update button styles
+            updateButtonStyles(mode);
+            
+            // Reload page to reinitialize carousel
+            location.reload();
+        }
+        
+        // Update button styles based on active mode
+        function updateButtonStyles(mode) {
+            const buttons = document.querySelectorAll('[onclick^="switchMode"]');
+            buttons.forEach(btn => {
+                const btnMode = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                if (btnMode === mode) {
+                    btn.style.background = 'var(--primary-color)';
+                    btn.style.color = 'white';
+                } else {
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--primary-color)';
+                }
+            });
+        }
+    </script>
+    <script src="/js/components/carousel.js"></script>
+</body>
+</html>
+
