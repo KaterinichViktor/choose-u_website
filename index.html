@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="site_title">Обираю Тебе</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/public/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+        <!-- Main Content -->
+        <main>
+            <div class="color-box-1" style="background-color: blanchedalmond;">
+                <!-- Header -->
+                <header class="site-header">
+                    <nav class="header-nav">
+                        <div class="header-content">
+                            <!-- Logo -->
+                            <div class="header-logo">
+                                <a href="/index.html" style="width: 40px; height: 40px;">
+                                    <img src="/public/images/logos/logo.svg" alt="Company Logo" class="logo-image">
+                                </a>
+                            </div>
+
+                            <!-- Desktop Navigation (hidden on mobile) -->
+                            <div class="desktop-nav">
+                                <!-- Navigation items can be added here later -->
+                            </div>
+
+                            <!-- Header Right Section (Language + Phone) -->
+                            <div class="header-right">
+                                <!-- Language Dropdown -->
+                                <div class="nav-dropdown lang-dropdown" id="langDropdown">
+                                    <button class="dropdown-button" id="langButton">
+                                        <span class="current-lang">EN</span>
+                                        <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item active" data-lang="en">English</button>
+                                        <button class="dropdown-item" data-lang="ua">Українська</button>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <a href="tel:+380123456789" class="header-phone" data-i18n="header_phone"></a>
+                            </div>
+
+                            <!-- Mobile Menu Toggle -->
+                            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                                <svg class="menu-icon menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                                <svg class="menu-icon menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Mobile Navigation -->
+                        <div class="mobile-nav" id="mobileNav">
+                            <div class="mobile-nav-content">
+                                <!-- Mobile Language Dropdown -->
+                                <div class="mobile-dropdown mobile-lang" id="mobileLangDropdown">
+                                    <button class="mobile-dropdown-button">
+                                        <span>Language: <strong class="current-lang">EN</strong></span>
+                                        <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1rem; height: 1rem;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div class="mobile-dropdown-menu">
+                                        <button class="mobile-dropdown-item active" data-lang="en">English</button>
+                                        <button class="mobile-dropdown-item" data-lang="ua">Українська</button>
+                                    </div>
+                                </div>
+
+                            <!-- Mobile Phone -->
+                            <a href="tel:+380123456789" class="mobile-phone" data-i18n="header_phone"></a>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+                <!-- Hero Section -->
+                <section class="section-1" style="padding: 4rem 0; text-align: center; margin-bottom: 40px;">
+                    <h1 data-i18n="hero_heading"></h1>
+                    <p style="font-size: 1.25rem; color: #64748b; margin-top: 1rem;" data-i18n="hero_description"></p>
+                </section>
+                <!-- Main content will go here -->
+                <section class="section-2" style="padding: 4rem 0; text-align: center; background-color: #f0f0f0; border-radius: 10px; margin-bottom: 20px;">
+                    <h1 data-i18n="section2_title"></h1>
+                    <p style="font-size: 1.25rem; color: #64748b; margin-top: 1rem;" data-i18n="section2_description"></p>
+                </section>
+                <!-- Main content will go here -->
+                <section class="section-3" style="padding: 4rem 0; text-align: center; border-radius: 10px;">
+                    <h1 data-i18n="section3_title"></h1>
+                    <p style="font-size: 1.25rem; color: #64748b; margin-top: 1rem;" data-i18n="section3_description"></p>
+                </section>
+            </div>
+            <div class="color-box-2" style="background-color: #f0f0f0;">
+                <section class="section-4" style="padding: 4rem 0; text-align: center; background-color: #496ab3;">
+                    <h1 data-i18n="section4_title"></h1>
+                    <p style="font-size: 1.25rem; color: #64748b; margin-top: 1rem;" data-i18n="section4_description"></p>
+                </section>
+            </div>
+            <div class="color-box-3" style="background-color: #f0f0f0;">
+                <section class="section-5" style="padding: 4rem 0; text-align: center; background-color: #ebe6a9;">
+                    <h1 data-i18n="section5_title"></h1>
+                    <p style="font-size: 1.25rem; color: #64748b; margin-top: 1rem;" data-i18n="section5_description"></p>
+                </section>
+            </div>
+        </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Left Section: Logo, Name, Social Media -->
+                <div class="footer-section footer-left">
+                    <!-- Logo and Company Name in One Row -->
+                    <div class="footer-logo-name">
+                        <div class="footer-logo">
+                            <img src="/public/images/logos/logo-white.svg" alt="Company Logo" class="footer-logo-image">
+                        </div>
+                        <h3 class="footer-heading footer-company-name" data-i18n="footer_company_name"></h3>
+                    </div>
+                    
+                    <p class="footer-description" data-i18n="footer_description"></p>
+                    
+                    <!-- Social Icons -->
+                    <div class="footer-social">
+                        <a href="https://t.me/yourchannel" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                            <img src="/public/images/logos/telegram.svg" alt="Telegram" class="social-icon">
+                        </a>
+                        <a href="https://facebook.com/yourpage" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="/public/images/logos/facebook.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://instagram.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <img src="/public/images/logos/instagram.svg" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section: Contacts -->
+                <div class="footer-section footer-right">
+                    <h3 class="footer-heading" data-i18n="footer_contacts_heading"></h3>
+                    <ul class="footer-contact">
+                        <li class="footer-contact-item">
+                            <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@yourcompany.com" class="footer-link" data-i18n="footer_email"></a>
+                        </li>
+                        <li class="footer-contact-item">
+                            <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="tel:+380123456789" class="footer-link" data-i18n="footer_phone"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright" data-i18n="footer_copyright"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
