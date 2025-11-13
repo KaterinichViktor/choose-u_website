@@ -13,7 +13,12 @@ function initLanguageSwitcher() {
     let currentLang = localStorage.getItem('language') || 'ua'; // Default to Ukrainian
 
     // Load translations from JSON file
-    fetch('/js/translations.json')
+    // Determine the correct path based on current page location
+    const translationsPath = window.location.pathname.includes('/components/') 
+        ? '../js/translations.json' 
+        : './js/translations.json';
+    
+    fetch(translationsPath)
         .then(response => response.json())
         .then(data => {
             translations = data;
