@@ -6,7 +6,7 @@
     <title data-i18n="site_title">Обираю Тебе</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="/public/favicon.ico">
+    <link rel="icon" href="public/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
@@ -48,7 +48,7 @@
                                             <a href="/components/spinner.html" class="dropdown-item">Spinner/Loader</a>
                                             <a href="/components/carousel-pagination.html" class="dropdown-item">Carousel - Pagination</a>
                                             <a href="/components/carousel-continuous.html" class="dropdown-item">Carousel - Continuous</a>
-                                            <a href="/components/carousel-index.html" class="dropdown-item">Carousel - Comparison</a>
+                                            <!-- <a href="/components/carousel-index.html" class="dropdown-item">Carousel - Comparison</a> -->
                                             <div class="dropdown-divider"></div>
                                             <a href="/components/README.md" class="dropdown-item">Documentation</a>
                                         </div>
@@ -64,8 +64,8 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <a href="/index.html" class="dropdown-item">Main Page</a>
-                                            <a href="/header_footer/header.html" class="dropdown-item">Header Demo</a>
-                                            <a href="/header_footer/footer.html" class="dropdown-item">Footer Demo</a>
+                                            <!-- <a href="/header_footer/header.html" class="dropdown-item">Header Demo</a> -->
+                                            <!-- <a href="/header_footer/footer.html" class="dropdown-item">Footer Demo</a> -->
                                             <div class="dropdown-divider"></div>
                                             <a href="/css/README.md" class="dropdown-item">CSS Structure</a>
                                             <a href="/css/THEMES.md" class="dropdown-item">Theme System</a>
@@ -165,21 +165,160 @@
 
                 <!-- Hero Section -->
                 <section class="section-1">
-                    <h1 data-i18n="hero_heading"></h1>
-                    <p data-i18n="hero_description"></p>
+                    <div class="left-content">
+                        <h1 data-i18n="hero_title"></h1>
+                        <h3 data-i18n="hero_subtitle"></h3>
+                    </div>
+                    <div class="right-content">
+                        <img src="/public/images/hero/nature_2.jpg" alt="Hero Image" class="hero-image">
+                    </div>
                 </section>
-                <!-- Main content will go here -->
+                <!-- Section 2 - About Us -->
                 <section class="section-2">
-                    <h1 data-i18n="section2_title"></h1>
-                    <p data-i18n="section2_description"></p>
+                    <div class="section2-top-box">
+                        <h3 data-i18n="section2_title"></h3>
+                    </div>
+                    <div class="section2-bottom-row">
+                        <div class="section2-left-box">
+                            <p data-i18n="section2_description"></p>
+                            <p data-i18n="section2_text_1"></p>
+                            <blockquote data-i18n="section2_quote"></blockquote>
+                        </div>
+                        <div class="section2-right-box">
+                            <p data-i18n="section2_text_2"></p>
+                            <p data-i18n="section2_text_3"></p>
+                            <p><span data-i18n="section2_text_4"></span> <span class="section2-text-accent" data-i18n="section2_text_4_accent"></span></p>
+                        </div>
+                    </div>
                 </section>
                 <!-- Main content will go here -->
-                <section class="section-3">
-                    <h1 data-i18n="section3_title"></h1>
-                    <p data-i18n="section3_description"></p>
+                <section class="carousel-section">
+                    <div class="carousel-container">
+                        <!-- Section Title -->
+                        <div class="carousel-header">
+                            <h2 class="carousel-title" data-i18n="section3_title"></h2>
+                        </div>
+            
+                        <!-- Carousel Wrapper -->
+                        <div class="carousel-wrapper">
+                            <!-- Previous Button -->
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+            
+                            <!-- Carousel Track -->
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    
+                                    <!-- Card 1 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card1_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card1_item1"></li>
+                                            <li data-i18n="carousel_card1_item2"></li>
+                                        </ul>
+                                    </div>
+            
+                                    <!-- Card 2 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card2_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card2_item1"></li>
+                                            <li data-i18n="carousel_card2_item2"></li>
+                                            <li data-i18n="carousel_card2_item3"></li>
+                                        </ul>
+                                    </div>
+            
+                                    <!-- Card 3 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card3_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card3_item1"></li>
+                                            <li data-i18n="carousel_card3_item2"></li>
+                                            <li data-i18n="carousel_card3_item3"></li>
+                                            <li data-i18n="carousel_card3_item4"></li>
+                                        </ul>
+                                    </div>
+            
+                                    <!-- Card 4 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card4_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card4_item1"></li>
+                                            <li data-i18n="carousel_card4_item2"></li>
+                                            <li data-i18n="carousel_card4_item3"></li>
+                                            <li data-i18n="carousel_card4_item4"></li>
+                                        </ul>
+                                    </div>
+            
+                                    <!-- Card 5 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card5_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card5_item1"></li>
+                                            <li data-i18n="carousel_card5_item2"></li>
+                                            <li data-i18n="carousel_card5_item3"></li>
+                                        </ul>
+                                    </div>
+            
+                                    <!-- Card 6 -->
+                                    <div class="carousel-card">
+                                        <div class="card-icon">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title" data-i18n="carousel_card6_title"></h3>
+                                        <ul class="card-list">
+                                            <li data-i18n="carousel_card6_item1"></li>
+                                            <li data-i18n="carousel_card6_item2"></li>
+                                            <li data-i18n="carousel_card6_item3"></li>
+                                        </ul>
+                                    </div>
+            
+                                </div>
+                            </div>
+            
+                            <!-- Next Button -->
+                            <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+            
+                        <!-- No indicators in continuous mode -->
+                    </div>
                 </section>
             </div>
-            <div class="color-box-2">
+            <!-- <div class="color-box-2">
                 <section class="section-4">
                     <h1 data-i18n="section4_title"></h1>
                     <p data-i18n="section4_description"></p>
@@ -190,21 +329,19 @@
                     <h1 data-i18n="section5_title"></h1>
                     <p data-i18n="section5_description"></p>
                 </section>
-            </div>
+            </div> -->
         </main>
 
 
     <!-- Theme Switcher -->
-    <div class="theme-switcher">
+    <!-- <div class="theme-switcher">
         <div class="theme-switcher-title">Color Theme</div>
         <div class="theme-buttons">
-            <button class="theme-btn active" data-theme="theme1" title="Default Blue" aria-label="Theme 1 - Default Blue"></button>
-            <button class="theme-btn" data-theme="theme2" title="Warm Earth" aria-label="Theme 2 - Warm Earth"></button>
-            <button class="theme-btn" data-theme="theme3" title="Ocean Blue" aria-label="Theme 3 - Ocean Blue"></button>
-            <button class="theme-btn" data-theme="theme4" title="Dark Green" aria-label="Theme 4 - Dark Green"></button>
-            <button class="theme-btn" data-theme="theme5" title="Ocean Mist" aria-label="Theme 5 - Ocean Mist"></button>
+            <button class="theme-btn active" data-theme="theme1" title="Forest Green" aria-label="Theme 1 - Forest Green"></button>
+            <button class="theme-btn" data-theme="theme2" title="Green" aria-label="Theme 3 - Green"></button>
+            <button class="theme-btn" data-theme="theme3" title="Dark Green Forest" aria-label="Theme 4 - Dark Green Forest"></button>
         </div>
-    </div>
+    </div> -->
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -273,5 +410,7 @@
     <script src="/js/components/language-switcher.js"></script>
     <script src="/js/components/navigation.js"></script>
     <script src="/js/main.js"></script>
+
+    <script src="/js/components/carousel-continuous.js"></script>
 </body>
 </html>

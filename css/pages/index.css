@@ -1,12 +1,36 @@
 /* Index Page Specific Styles */
 
+.frosted {
+    background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+    backdrop-filter: blur(10px); /* controls blur strength */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    border-radius: 10px; /* optional */
+  }
+  
+
 /* Color Boxes - Main Layout Containers */
 .color-box-1 {
-    background-color: var(--bg-light);
+    /* background-color: var(--bg-light); */
     margin: 0;
     padding: 0;
     width: 100%;
     padding: 20px;
+
+    background: 
+        radial-gradient(50% 50% at 100% 0,#C6D870 0%  5% ,#556B2F 6%  15%,#C6D870 16% 25%,#556B2F 26% 35%,#C6D870 36% 45%,
+         #556B2F 46% 55%,#C6D870 56% 65%,#556B2F 66% 75%,#C6D870 76% 85%,#556B2F 86% 95%,
+         #0000 96%),
+        radial-gradient(50% 50% at 0 100%,#C6D870 0%  5% ,#556B2F 6%  15%,#C6D870 16% 25%,#556B2F 26% 35%,#C6D870 36% 45%,
+         #556B2F 46% 55%,#C6D870 56% 65%,#556B2F 66% 75%,#C6D870 76% 85%,#556B2F 86% 95%,
+         #0000 96%),
+        radial-gradient(50% 50%,#C6D870 0%  5% ,#556B2F 6%  15%,#C6D870 16% 25%,#556B2F 26% 35%,#C6D870 36% 45%,
+         #556B2F 46% 55%,#C6D870 56% 65%,#556B2F 66% 75%,#C6D870 76% 85%,#556B2F 86% 95%,
+         #0000 96%),
+        radial-gradient(50% 50%,#C6D870 0%  5% ,#556B2F 6%  15%,#C6D870 16% 25%,#556B2F 26% 35%,#C6D870 36% 45%,
+         #556B2F 46% 55%,#C6D870 56% 65%,#556B2F 66% 75%,#C6D870 76% 85%,#556B2F 86% 95%,
+         #0000 96%) 100px 100px;
+    background-size: 200px 200px;
+    background-color: #C6D870;
 }
 
 .color-box-2 {
@@ -31,30 +55,334 @@
 
 /* Section 1 - Hero Section */
 .section-1 {
-    padding: 4rem 0;
-    text-align: center;
+    min-height: 600px;
     margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 40px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    overflow: hidden;
 }
 
-.section-1 p {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    margin-top: 1rem;
+.left-content {
+    flex: 0 0 35%;
+    width: 35%;
+    padding: 3rem 3rem 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
 }
 
-/* Section 2 */
+.left-content h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.left-content h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.left-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-top: 0;
+    max-width: 90%;
+}
+
+.right-content {
+    flex: 0 0 65%;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Responsive styles for section-1 */
+@media (max-width: 1024px) {
+    .section-1 {
+        min-height: 500px;
+    }
+    
+    .left-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .left-content h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .left-content p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .left-content,
+    .right-content {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .left-content {
+        padding: 2.5rem 2rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .left-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .left-content h3 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+    
+    .left-content p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    
+    .right-content {
+        min-height: 300px;
+    }
+    
+    .hero-image {
+        border-radius: 0 0 40px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-1 {
+        border-radius: 20px;
+    }
+    
+    .left-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .left-content h1 {
+        font-size: 2rem;
+    }
+    
+    .left-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .left-content p {
+        font-size: 0.95rem;
+    }
+    
+    .right-content {
+        min-height: 250px;
+    }
+    
+    .hero-image {
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+/* Section 2 - About Us with 3 Boxes */
 .section-2 {
-    padding: 4rem 0;
-    text-align: center;
-    background-color: var(--gray);
-    border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.section-2 p {
+/* Top Box - Full Width */
+.section2-top-box {
+    background: var(--gray);
+
+    
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section2-top-box h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+/* Bottom Row - Two Boxes */
+.section2-bottom-row {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.section2-left-box,
+.section2-right-box {
+    flex: 1;
+    background: var(--gray);
+    border-radius: 30px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section2-left-box p,
+.section2-right-box p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.section2-left-box blockquote {
     font-size: 1.25rem;
-    color: var(--text-light);
-    margin-top: 1rem;
+    font-weight: 800;
+    color: var(--text-color);
+    background-color: rgba(198, 216, 112, 0.6);
+    border-radius: 20px;
+    margin: 0;
+    padding: 0.4rem;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.section2-text-accent {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+
+/* Responsive styles for section-2 */
+@media (max-width: 1024px) {
+    .section-2 {
+        gap: 1.5rem;
+    }
+    
+    .section2-top-box h3 {
+        font-size: 1.75rem;
+    }
+    
+    .section2-top-box,
+    .section2-left-box,
+    .section2-right-box {
+        padding: 2rem 2.5rem;
+    }
+    
+    .section2-left-box p,
+    .section2-right-box p {
+        font-size: 1.05rem;
+    }
+    
+    .section2-left-box blockquote {
+        font-size: 1.3rem;
+        padding: 1.75rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-2 {
+        gap: 1.5rem;
+    }
+    
+    .section2-bottom-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .section2-top-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .section2-top-box,
+    .section2-left-box,
+    .section2-right-box {
+        padding: 2rem;
+        border-radius: 20px;
+    }
+    
+    .section2-left-box p,
+    .section2-right-box p {
+        font-size: 1rem;
+    }
+    
+    .section2-left-box blockquote {
+        font-size: 1.2rem;
+        padding: 1.5rem 2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .section2-left-box blockquote::before {
+        font-size: 4rem;
+        top: -12px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-2 {
+        gap: 1.25rem;
+    }
+    
+    .section2-top-box h3 {
+        font-size: 1.3rem;
+    }
+    
+    .section2-top-box,
+    .section2-left-box,
+    .section2-right-box {
+        padding: 1.5rem;
+    }
+    
+    .section2-left-box p,
+    .section2-right-box p {
+        font-size: 0.95rem;
+    }
+    
+    .section2-left-box blockquote {
+        font-size: 1.05rem;
+        padding: 1.25rem 1.5rem;
+    }
 }
 
 /* Section 3 */

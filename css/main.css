@@ -9,86 +9,26 @@
    COLOR THEMES - Switch between palettes
    ======================================== */
 
-/* Theme 1 - Default (Blue) */
+/* Theme 1 - Forest Green */
 :root,
-[data-theme="theme1"] {
-    --primary-color: #2563eb;
-    --secondary-color: #64748b;
-    --accent-color: #0ea5e9;
-    --gray: #CBCBCB;
-    --text-color: #1e293b;
-    --text-light: #64748b;
-    --bg-color: #ffffff;
-    --bg-light: #f8fafc;
-    --border-color: #e2e8f0;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
 
-/* Theme 2 - Warm Earth */
-[data-theme="theme2"] {
-    --primary-color: #9F8772;    
-    --secondary-color: #C8DBBE;  
-    --accent-color: #665A48;     
-    --gray: #CBCBCB;
-    --text-color: #665A48;       
-    --text-light: #9F8772;      
-    --bg-color: #EDE4E0;         
-    --bg-light: #F7F4F2;        
-    --border-color: #D7CFC7;    
-    --shadow: 0 1px 3px rgba(102, 90, 72, 0.1);
-    --shadow-lg: 0 10px 25px rgba(102, 90, 72, 0.1);
-    --transition: all 0.3s ease;
-}
-
-/* Theme 3 - Ocean Blue */
+/* Theme 4 - Dark Green Forest */
 [data-theme="theme3"] {
-    --primary-color: #89A8B2;   
-    --secondary-color: #B3C8CF;  
-    --accent-color: #E5E1DA;     
+    --primary-color: #132A13;    
+    --secondary-color: #31572C;  
+    --accent-color: #b6c53a;        
     --gray: #CBCBCB;
-    --text-color: #3F4E55;       
-    --text-light: #B3C8CF;      
-    --bg-color: #F1F0E8;        
-    --bg-light: #FFFFFF;          
-    --border-color: #D9D9D4;    
-    --shadow: 0 1px 3px rgba(137, 168, 178, 0.1);
-    --shadow-lg: 0 10px 25px rgba(137, 168, 178, 0.1);
-    --transition: all 0.3s ease;
-}
-
-/* Theme 4 - Dark Green */
-[data-theme="theme4"] {
-    --primary-color: #3F4E4F;    
-    --secondary-color: #A27B5C;  
-    --accent-color: #DCD7C9;    
-    --gray: #CBCBCB;
-    --text-color: #2C3639;       
-    --text-light: #A27B5C;       
-    --bg-color: #DCD7C9;         
-    --bg-light: #EDEBE6;        
+    --text-color: #000000;        
+    --text-light: #ffffff;      
+    --bg-color: #556B2F;         
+    --bg-light: #C6D870;  
+    --bg-extra-light: #f2f8db;         
     --border-color: #B0A998;     
     --shadow: 0 1px 3px rgba(44, 54, 57, 0.1);
     --shadow-lg: 0 10px 25px rgba(44, 54, 57, 0.1);
     --transition: all 0.3s ease;
 }
 
-/* Theme 5 - Ocean Mist */
-[data-theme="theme5"] {
-    --primary-color: #204051;
-    --secondary-color: #3B6978;
-    --accent-color: #84A9AC;
-    --bg-color: #E7DFD5;
-    --bg-light: #F2EDE9;
-    --text-color: #1B262C;
-    --text-light: #84A9AC;
-    --gray: #C7C7C7;
-    --border-color: #A8B4B5;
-    --shadow: 0 1px 3px rgba(32, 64, 81, 0.1);
-    --shadow-lg: 0 10px 25px rgba(32, 64, 81, 0.15);
-    --transition: all 0.3s ease;
-  }
   
 
 

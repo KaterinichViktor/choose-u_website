@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel Continuous Mode - Areas of Work</title>
     
+    <link rel="icon" href="public/favicon.ico">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/components/carousel-continuous.css">
@@ -25,8 +26,15 @@
                 <p class="carousel-subtitle">Comprehensive support services for veterans and their families</p>
             </div>
 
-            <!-- Carousel Wrapper (No buttons in continuous mode) -->
+            <!-- Carousel Wrapper -->
             <div class="carousel-wrapper">
+                <!-- Previous Button -->
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
                 <!-- Carousel Track -->
                 <div class="carousel-track-container">
                     <div class="carousel-track">
@@ -35,76 +43,108 @@
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Psychological Support</h3>
-                            <p class="card-description">Professional counseling and therapy services for PTSD, anxiety, and mental health challenges faced by veterans.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Реінтеграція сімей</h3>
+                            <ul class="card-list">
+                                <li>Відновлення та покращення стосунків між військовими та їх родинами</li>
+                                <li>Об'єднання родин після тривалого перебування за кордоном</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                         <!-- Card 2 -->
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Family Support</h3>
-                            <p class="card-description">Comprehensive programs to help families cope with the challenges of military service and reintegration.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Допомога ветеранам</h3>
+                            <ul class="card-list">
+                                <li>Реінтеграція демобілізованих в цивільне життя</li>
+                                <li>Ретритні програми та оздоровлення</li>
+                                <li>Психологічна реабілітація ветеранів</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                         <!-- Card 3 -->
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Career Training</h3>
-                            <p class="card-description">Job placement assistance, skills training, and career development programs for transitioning veterans.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Підтримка військових</h3>
+                            <ul class="card-list">
+                                <li>Психологічна підтримка діючих військових та їх родин</li>
+                                <li>Супровід рідних полонених</li>
+                                <li>Супровід сімей зниклих без вісті</li>
+                                <li>Супровід сімей загиблих</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                         <!-- Card 4 -->
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Housing Assistance</h3>
-                            <p class="card-description">Support with finding affordable housing, rental assistance, and home adaptation for disabled veterans.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Допомога дітям</h3>
+                            <ul class="card-list">
+                                <li>Психологічна підтримка та супровід дітей</li>
+                                <li>Оздоровлення дітей</li>
+                                <li>Навчальні програми</li>
+                                <li>Етнотабори для патріотичного виховання</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                         <!-- Card 5 -->
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Educational Programs</h3>
-                            <p class="card-description">Scholarship opportunities, tutoring services, and educational guidance for veterans pursuing further education.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Етнотабори</h3>
+                            <ul class="card-list">
+                                <li>Патріотичне виховання дітей та молоді</li>
+                                <li>Відновлення українських традицій</li>
+                                <li>Вивчення народної культури</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                         <!-- Card 6 -->
                         <div class="carousel-card">
                             <div class="card-icon">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Health & Wellness</h3>
-                            <p class="card-description">Physical rehabilitation, fitness programs, and holistic wellness services to support veteran health.</p>
-                            <a href="#" class="card-link">Learn more →</a>
+                            <h3 class="card-title">Українська культура</h3>
+                            <ul class="card-list">
+                                <li>Популяризація української культури та мови</li>
+                                <li>Збереження народних традицій</li>
+                                <li>Культурно-освітні програми для молоді</li>
+                            </ul>
+                            <!-- <a href="#" class="card-link">Дізнатися більше →</a> -->
                         </div>
 
                     </div>
                 </div>
+
+                <!-- Next Button -->
+                <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
             </div>
 
             <!-- No indicators in continuous mode -->

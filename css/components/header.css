@@ -7,7 +7,7 @@
     margin: 0 auto 40px auto;
     /* margin-left: 20px;
     margin-right: 20px; */
-    background-color: white;
+    background-color: var(--bg-extra-light);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
     max-width: 1400px;
@@ -17,6 +17,8 @@
     padding: 1rem 1.5rem;
     border-radius: 20px;
     /* background-color: var(--bg-color); */
+
+    position: relative;
 }
 
 /* Header Content - Main Row */
@@ -34,8 +36,30 @@
 }
 
 .logo-image {
-    height: 2.5rem;
+    height: 60px;
     width: auto;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 150;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Logo positioning on mobile devices */
+@media (max-width: 1023px) {
+    .logo-image {
+        height: 50px;
+        left: 1rem;
+        top: 1.5rem;
+        transform: translateY(0);
+    }
+    
+    .header-content {
+        min-height: 4rem;
+    }
 }
 
 /* Desktop Navigation - Inside header-right */
@@ -44,7 +68,7 @@
     align-items: center;
     gap: 1.5rem;
     padding-right: 1rem;
-    border-right: 1px solid #e5e7eb;
+    border-right: 1px solid var(--border-color);
 }
 
 /* Navigation Dropdown Container */
@@ -59,7 +83,7 @@
     gap: 0.5rem;
     background: none;
     border: none;
-    color: #374151;
+    color: var(--text-color);
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
@@ -68,7 +92,7 @@
 }
 
 .dropdown-button:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 /* Dropdown Arrow Icon */
@@ -115,7 +139,7 @@
     display: block;
     width: 100%;
     padding: 0.75rem 1rem;
-    color: #374151;
+    color: var(--text-color);
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
     border: none;
@@ -134,26 +158,26 @@
 }
 
 .dropdown-item:hover {
-    background-color: #f3f4f6;
-    color: #2563eb;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
 }
 
 .dropdown-item.active {
-    background-color: #eff6ff;
-    color: #2563eb;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 /* Dropdown Divider */
 .dropdown-divider {
     height: 1px;
-    background-color: #e5e7eb;
+    background-color: var(--border-color);
     margin: 0.5rem 0;
 }
 
 /* Regular Nav Link */
 .nav-link {
-    color: #374151;
+    color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
     padding: 0.5rem;
@@ -161,7 +185,7 @@
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: var(--primary-color); 
 }
 
 /* Header Right Section - Contains all navigation elements */
@@ -180,7 +204,7 @@
 
 /* Phone Number */
 .header-phone {
-    color: #2563eb;
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.125rem;
     text-decoration: none;
@@ -188,7 +212,7 @@
 }
 
 .header-phone:hover {
-    color: #1d4ed8;
+    color: var(--accent-color);
 }
 
 /* Mobile Menu Toggle */
@@ -203,7 +227,7 @@
 .menu-icon {
     width: 1.5rem;
     height: 1.5rem;
-    color: #374151;
+    color: var(--text-color);
 }
 
 .menu-icon-close {
@@ -250,12 +274,17 @@
     width: 100%;
     background: none;
     border: none;
-    color: #374151;
+    color: var(--text-color);
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem 0;
     text-align: left;
+    transition: color 0.2s;
+}
+
+.mobile-dropdown-button:hover {
+    color: var(--primary-color);
 }
 
 .mobile-dropdown-menu {
@@ -278,7 +307,7 @@
 .mobile-dropdown-item {
     display: block;
     padding: 0.5rem 0;
-    color: #6b7280;
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.2s;
     background: none;
@@ -290,18 +319,18 @@
 }
 
 .mobile-dropdown-item:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 .mobile-dropdown-item.active {
-    color: #2563eb;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 /* Mobile Nav Link */
 .mobile-nav-link {
     display: block;
-    color: #374151;
+    color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
     padding: 0.5rem 0;
@@ -309,23 +338,28 @@
 }
 
 .mobile-nav-link:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 /* Mobile Language Section */
 .mobile-lang {
     padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Mobile Phone */
 .mobile-phone {
     display: block;
-    color: #2563eb;
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.125rem;
     text-decoration: none;
     padding-top: 1rem;
+    transition: color 0.2s;
+}
+
+.mobile-phone:hover {
+    color: var(--accent-color);
 }
 
 /* Responsive Breakpoints */

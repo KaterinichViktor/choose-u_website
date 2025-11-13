@@ -10,6 +10,7 @@
 @import url('components/footer.css');
 @import url('components/theme-switcher.css');
 @import url('components/carousel.css');
+@import url('components/carousel-continuous.css');
 @import url('components/spinner.css');
 
 /* Page-Specific Styles */

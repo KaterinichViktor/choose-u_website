@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spinner/Loader Components</title>
+    <title>Bars Spinner - Loading Animation</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/main.css">
@@ -13,10 +13,11 @@
         body {
             padding: 40px 20px;
             background-color: var(--bg-light);
+            min-height: 100vh;
         }
         
         .demo-section {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto 3rem;
             background: var(--bg-color);
             border-radius: 12px;
@@ -30,39 +31,23 @@
             font-size: 1.5rem;
         }
         
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
         .demo-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
-            padding: 2rem;
+            padding: 3rem 2rem;
             background: var(--bg-light);
             border-radius: 8px;
             min-height: 150px;
             justify-content: center;
+            margin-bottom: 1rem;
         }
         
         .demo-item-label {
             font-size: 0.875rem;
             color: var(--text-light);
             font-weight: 500;
-        }
-        
-        .size-demo {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            background: var(--bg-light);
-            border-radius: 8px;
         }
         
         .demo-controls {
@@ -94,16 +79,6 @@
             border: 2px solid var(--border-color);
         }
         
-        .inline-demo {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 8px;
-            flex-wrap: wrap;
-        }
-        
         .page-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -131,44 +106,36 @@
             color: var(--text-color);
             overflow-x: auto;
         }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
 
     <div class="page-header">
-        <h1 class="page-title">Spinner Components</h1>
-        <p class="page-subtitle">7 different loading animations with multiple sizes and colors</p>
+        <h1 class="page-title">Bars Loading Spinner</h1>
+        <p class="page-subtitle">Clean and modern animated loading indicator</p>
     </div>
 
-    <!-- Style Variations -->
+    <!-- Size Variations -->
     <div class="demo-section">
-        <h2>🎨 Spinner Styles</h2>
+        <h2>📏 Size Variations</h2>
         <div class="demo-grid">
-            
             <div class="demo-item">
-                <span class="loader"></span>
-                <span class="demo-item-label">Simple Loader</span>
-            </div>
-            
-            <div class="demo-item">
-                <div class="spinner-dual"></div>
-                <span class="demo-item-label">Dual Ring</span>
-            </div>
-            
-            <div class="demo-item">
-                <div class="spinner-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                <div class="spinner-bars small">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
-                <span class="demo-item-label">Bouncing Dots</span>
+                <span class="demo-item-label">Small</span>
             </div>
-            
-            <div class="demo-item">
-                <div class="spinner-pulse"></div>
-                <span class="demo-item-label">Pulse</span>
-            </div>
-            
             <div class="demo-item">
                 <div class="spinner-bars">
                     <div class="bar"></div>
@@ -177,42 +144,17 @@
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-                <span class="demo-item-label">Bars</span>
+                <span class="demo-item-label">Medium (Default)</span>
             </div>
-            
             <div class="demo-item">
-                <div class="spinner-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="spinner-bars large">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
-                <span class="demo-item-label">Ring</span>
-            </div>
-            
-            <div class="demo-item">
-                <div class="spinner-gradient"></div>
-                <span class="demo-item-label">Gradient</span>
-            </div>
-            
-        </div>
-    </div>
-
-    <!-- Size Variations -->
-    <div class="demo-section">
-        <h2>📏 Size Variations</h2>
-        <div class="size-demo">
-            <div>
-                <span class="loader small"></span>
-                <p style="text-align: center; margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">Small</p>
-            </div>
-            <div>
-                <span class="loader"></span>
-                <p style="text-align: center; margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-light);">Medium</p>
-            </div>
-            <div>
-                <span class="loader large"></span>
-                <p style="text-align: center; margin-top: 0.5rem; font-size: 1rem; color: var(--text-light);">Large</p>
+                <span class="demo-item-label">Large</span>
             </div>
         </div>
     </div>
@@ -220,79 +162,16 @@
     <!-- With Text -->
     <div class="demo-section">
         <h2>📝 With Loading Text</h2>
-        <div class="demo-grid">
-            
-            <div class="demo-item">
-                <div class="spinner-wrapper">
-                    <span class="loader"></span>
-                    <span class="spinner-text">Loading...</span>
+        <div class="demo-item">
+            <div class="spinner-wrapper">
+                <div class="spinner-bars large">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
-            </div>
-            
-            <div class="demo-item">
-                <div class="spinner-wrapper">
-                    <div class="spinner-dots">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <span class="spinner-text">Please wait</span>
-                </div>
-            </div>
-            
-            <div class="demo-item">
-                <div class="spinner-wrapper">
-                    <div class="spinner-gradient"></div>
-                    <span class="spinner-text">Processing...</span>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    <!-- Inline Usage -->
-    <div class="demo-section">
-        <h2>🔘 Button Spinners (Inline)</h2>
-        <div class="inline-demo">
-            
-            <button class="demo-button">
-                <span class="btn-spinner">
-                    <span class="loader"></span>
-                    <span>Loading...</span>
-                </span>
-            </button>
-            
-            <button class="demo-button">
-                <span class="btn-spinner">
-                    <span class="spinner-dots">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </span>
-                    <span>Processing</span>
-                </span>
-            </button>
-            
-        </div>
-    </div>
-
-    <!-- Progress Bar -->
-    <div class="demo-section">
-        <h2>📊 Progress Bar</h2>
-        <div style="padding: 2rem; background: var(--bg-light); border-radius: 8px;">
-            <p style="margin-bottom: 1rem; color: var(--text-color);">Indeterminate (loading):</p>
-            <div class="progress-bar-container">
-                <div class="progress-bar indeterminate"></div>
-            </div>
-            
-            <p style="margin: 2rem 0 1rem; color: var(--text-color);">Determinate (50%):</p>
-            <div class="progress-bar-container">
-                <div class="progress-bar" style="width: 50%;"></div>
-            </div>
-            
-            <p style="margin: 2rem 0 1rem; color: var(--text-color);">Determinate (75%):</p>
-            <div class="progress-bar-container">
-                <div class="progress-bar" style="width: 75%;"></div>
+                <span class="spinner-text" style="color: var(--text-color);">Loading...</span>
             </div>
         </div>
     </div>
@@ -310,55 +189,27 @@
     <div class="demo-section">
         <h2>💻 Usage Examples</h2>
         
-        <h3 style="color: var(--text-color); margin: 1.5rem 0 0.5rem; font-size: 1.125rem;">Simple Spinner:</h3>
-        <div class="code-block">&lt;!-- Simple loader --&gt;
-&lt;span class="loader"&gt;&lt;/span&gt;
-
-&lt;!-- Or use spinner-circle (same thing) --&gt;
-&lt;div class="spinner-circle"&gt;&lt;/div&gt;</div>
-        
-        <h3 style="color: var(--text-color); margin: 1.5rem 0 0.5rem; font-size: 1.125rem;">With Text:</h3>
-        <div class="code-block">&lt;div class="spinner-wrapper"&gt;
-  &lt;div class="spinner-dots"&gt;
-    &lt;div class="dot"&gt;&lt;/div&gt;
-    &lt;div class="dot"&gt;&lt;/div&gt;
-    &lt;div class="dot"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;span class="spinner-text"&gt;Loading...&lt;/span&gt;
-&lt;/div&gt;</div>
-        
-        <h3 style="color: var(--text-color); margin: 1.5rem 0 0.5rem; font-size: 1.125rem;">Full-Page Overlay:</h3>
-        <div class="code-block">&lt;div class="spinner-overlay"&gt;
-  &lt;div class="spinner-wrapper"&gt;
-    &lt;div class="spinner-circle large"&gt;&lt;/div&gt;
-    &lt;span class="spinner-text"&gt;Loading...&lt;/span&gt;
-  &lt;/div&gt;
+        <h3 style="color: var(--text-color); margin: 1.5rem 0 0.5rem; font-size: 1.125rem;">Basic HTML:</h3>
+        <div class="code-block">&lt;div class="spinner-bars"&gt;
+  &lt;div class="bar"&gt;&lt;/div&gt;
+  &lt;div class="bar"&gt;&lt;/div&gt;
+  &lt;div class="bar"&gt;&lt;/div&gt;
+  &lt;div class="bar"&gt;&lt;/div&gt;
+  &lt;div class="bar"&gt;&lt;/div&gt;
 &lt;/div&gt;</div>
         
         <h3 style="color: var(--text-color); margin: 1.5rem 0 0.5rem; font-size: 1.125rem;">JavaScript Control:</h3>
-        <div class="code-block">// Show spinner
-showSpinner();
+        <div class="code-block">// Show loading spinner
+showSpinner('Loading...');
 
 // Hide spinner
 hideSpinner();
 
-// Show with custom text
-showSpinner('Processing your request...');</div>
-    </div>
-
-    <!-- Hidden Overlays for Demo -->
-    <div id="darkOverlay" class="spinner-overlay hidden">
-        <div class="spinner-wrapper">
-            <span class="loader large"></span>
-            <span class="spinner-text">Loading...</span>
-        </div>
-    </div>
-
-    <div id="lightOverlay" class="spinner-overlay light hidden">
-        <div class="spinner-wrapper">
-            <span class="loader large"></span>
-            <span class="spinner-text">Loading...</span>
-        </div>
+// Show spinner during async operation
+await Spinner.withSpinner(async () => {
+  // Your async code here
+  await fetch('/api/data');
+}, 'Fetching data...');</div>
     </div>
 
     <!-- JavaScript -->
@@ -366,26 +217,23 @@ showSpinner('Processing your request...');</div>
     <script>
         // Demo overlay functions
         function showOverlay() {
-            const overlay = document.getElementById('darkOverlay');
-            overlay.classList.remove('hidden');
+            showSpinner('Loading...', 'dark');
             
             // Auto-hide after 3 seconds
             setTimeout(() => {
-                overlay.classList.add('hidden');
+                hideSpinner();
             }, 3000);
         }
         
         function showLightOverlay() {
-            const overlay = document.getElementById('lightOverlay');
-            overlay.classList.remove('hidden');
+            showSpinner('Loading...', 'light');
             
             // Auto-hide after 3 seconds
             setTimeout(() => {
-                overlay.classList.add('hidden');
+                hideSpinner();
             }, 3000);
         }
     </script>
 
 </body>
 </html>
-

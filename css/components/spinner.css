@@ -1,13 +1,4 @@
-/* Spinner/Loader Component Styles */
-
-/* Base Spinner Container */
-.spinner-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
+/* Spinner/Loader Component - Bars Style Only */
 
 /* Overlay for full-page loading */
 .spinner-overlay {
@@ -16,7 +7,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -25,12 +16,11 @@
 }
 
 .spinner-overlay.light {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Hide spinner by default */
-.spinner-overlay.hidden,
-.spinner-container.hidden {
+.spinner-overlay.hidden {
     display: none;
 }
 
@@ -44,13 +34,9 @@
 
 /* Loading Text */
 .spinner-text {
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.spinner-overlay .spinner-text {
     color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .spinner-overlay.light .spinner-text {
@@ -58,181 +44,25 @@
 }
 
 /* ==========================================
-   SPINNER STYLE 1: Simple Loader
-   ========================================== */
-.loader,
-.spinner-circle {
-    width: 48px;
-    height: 48px;
-    border: 5px solid var(--primary-color);
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-}
-
-.loader.small,
-.spinner-circle.small {
-    width: 24px;
-    height: 24px;
-    border-width: 3px;
-}
-
-.loader.large,
-.spinner-circle.large {
-    width: 80px;
-    height: 80px;
-    border-width: 8px;
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ==========================================
-   SPINNER STYLE 2: Dual Ring
-   ========================================== */
-.spinner-dual {
-    width: 50px;
-    height: 50px;
-    position: relative;
-}
-
-.spinner-dual::before,
-.spinner-dual::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    border: 4px solid transparent;
-}
-
-.spinner-dual::before {
-    width: 100%;
-    height: 100%;
-    border-top-color: var(--primary-color);
-    animation: spinner-rotate 1.2s linear infinite;
-}
-
-.spinner-dual::after {
-    width: 70%;
-    height: 70%;
-    top: 15%;
-    left: 15%;
-    border-top-color: var(--accent-color);
-    animation: spinner-rotate 0.8s linear infinite reverse;
-}
-
-.spinner-dual.small {
-    width: 24px;
-    height: 24px;
-}
-
-.spinner-dual.large {
-    width: 80px;
-    height: 80px;
-}
-
-/* ==========================================
-   SPINNER STYLE 3: Dots
-   ========================================== */
-.spinner-dots {
-    display: inline-flex;
-    gap: 8px;
-}
-
-.spinner-dots .dot {
-    width: 12px;
-    height: 12px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    animation: spinner-bounce 1.4s ease-in-out infinite;
-}
-
-.spinner-dots .dot:nth-child(1) {
-    animation-delay: -0.32s;
-}
-
-.spinner-dots .dot:nth-child(2) {
-    animation-delay: -0.16s;
-}
-
-.spinner-dots .dot:nth-child(3) {
-    animation-delay: 0s;
-}
-
-.spinner-dots.small .dot {
-    width: 8px;
-    height: 8px;
-}
-
-.spinner-dots.large .dot {
-    width: 16px;
-    height: 16px;
-}
-
-@keyframes spinner-bounce {
-    0%, 80%, 100% {
-        transform: scale(0.6);
-        opacity: 0.5;
-    }
-    40% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* ==========================================
-   SPINNER STYLE 4: Pulse
-   ========================================== */
-.spinner-pulse {
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    animation: spinner-pulse 1.2s ease-in-out infinite;
-}
-
-.spinner-pulse.small {
-    width: 24px;
-    height: 24px;
-}
-
-.spinner-pulse.large {
-    width: 80px;
-    height: 80px;
-}
-
-@keyframes spinner-pulse {
-    0%, 100% {
-        transform: scale(0.8);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* ==========================================
-   SPINNER STYLE 5: Bars
+   BARS SPINNER
    ========================================== */
 .spinner-bars {
     display: inline-flex;
-    gap: 4px;
+    gap: 6px;
     align-items: flex-end;
-    height: 40px;
+    height: 50px;
 }
 
 .spinner-bars .bar {
-    width: 6px;
+    width: 8px;
     background-color: var(--primary-color);
+    border-radius: 4px;
     animation: spinner-bars 1s ease-in-out infinite;
+}
+
+/* White variant for dark overlays */
+.spinner-overlay:not(.light) .spinner-bars .bar {
+    background-color: white;
 }
 
 .spinner-bars .bar:nth-child(1) {
@@ -255,20 +85,23 @@
     animation-delay: 0s;
 }
 
+/* Size variations */
 .spinner-bars.small {
-    height: 24px;
+    height: 30px;
+    gap: 4px;
 }
 
 .spinner-bars.small .bar {
-    width: 4px;
+    width: 5px;
 }
 
 .spinner-bars.large {
-    height: 60px;
+    height: 70px;
+    gap: 8px;
 }
 
 .spinner-bars.large .bar {
-    width: 8px;
+    width: 10px;
 }
 
 @keyframes spinner-bars {
@@ -279,205 +112,3 @@
         height: 100%;
     }
 }
-
-/* ==========================================
-   SPINNER STYLE 6: Ring
-   ========================================== */
-.spinner-ring {
-    width: 50px;
-    height: 50px;
-    position: relative;
-}
-
-.spinner-ring div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 4px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: var(--primary-color) transparent transparent transparent;
-}
-
-.spinner-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-}
-
-.spinner-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-}
-
-.spinner-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-}
-
-.spinner-ring.small {
-    width: 24px;
-    height: 24px;
-}
-
-.spinner-ring.small div {
-    border-width: 3px;
-}
-
-.spinner-ring.large {
-    width: 80px;
-    height: 80px;
-}
-
-.spinner-ring.large div {
-    border-width: 6px;
-}
-
-@keyframes spinner-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ==========================================
-   SPINNER STYLE 7: Gradient Circle
-   ========================================== */
-.spinner-gradient {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: conic-gradient(
-        from 0deg,
-        var(--primary-color) 0deg,
-        var(--accent-color) 180deg,
-        var(--primary-color) 360deg
-    );
-    animation: spinner-rotate 1s linear infinite;
-    position: relative;
-}
-
-.spinner-gradient::before {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    background-color: var(--bg-color);
-    border-radius: 50%;
-    top: 10%;
-    left: 10%;
-}
-
-.spinner-gradient.small {
-    width: 24px;
-    height: 24px;
-}
-
-.spinner-gradient.large {
-    width: 80px;
-    height: 80px;
-}
-
-/* ==========================================
-   Button Spinner (Inline)
-   ========================================== */
-.btn-spinner {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-spinner .loader,
-.btn-spinner .spinner-circle {
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-}
-
-/* ==========================================
-   Card/Section Spinner
-   ========================================== */
-.loading-card {
-    position: relative;
-    min-height: 200px;
-}
-
-.loading-card .spinner-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 10;
-}
-
-/* ==========================================
-   Progress Bar (Bonus)
-   ========================================== */
-.progress-bar-container {
-    width: 100%;
-    height: 4px;
-    background-color: var(--bg-light);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        var(--primary-color),
-        var(--accent-color)
-    );
-    width: 0%;
-    transition: width 0.3s ease;
-    border-radius: 2px;
-}
-
-.progress-bar.indeterminate {
-    width: 30%;
-    animation: progress-indeterminate 1.5s ease-in-out infinite;
-}
-
-@keyframes progress-indeterminate {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(400%);
-    }
-}
-
-/* ==========================================
-   Theme Integration
-   ========================================== */
-.spinner-primary .spinner-circle,
-.spinner-primary .spinner-dual::before,
-.spinner-primary .spinner-dots .dot,
-.spinner-primary .spinner-pulse,
-.spinner-primary .spinner-bars .bar,
-.spinner-primary .spinner-ring div {
-    border-top-color: var(--primary-color);
-    background-color: var(--primary-color);
-}
-
-.spinner-secondary .spinner-circle,
-.spinner-secondary .spinner-dots .dot,
-.spinner-secondary .spinner-pulse,
-.spinner-secondary .spinner-bars .bar {
-    border-top-color: var(--secondary-color);
-    background-color: var(--secondary-color);
-}
-
-.spinner-white .spinner-circle,
-.spinner-white .spinner-dots .dot,
-.spinner-white .spinner-pulse,
-.spinner-white .spinner-bars .bar {
-    border-top-color: white;
-    background-color: white;
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.spinner-white .spinner-circle {
-    border-top-color: white;
-}
-

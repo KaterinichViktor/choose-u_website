@@ -3,12 +3,18 @@
 .carousel-section {
     padding: 4rem 0;
     overflow: hidden;
+
+
 }
 
 .carousel-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    
+    display: flex;
+    flex-direction: column;
+
 }
 
 /* Carousel Header */
@@ -22,6 +28,17 @@
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 0.5rem;
+    width: fit-content;
+    padding: 10px 20px;
+
+    align-self: center;
+    justify-self: center;
+
+
+    background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+    backdrop-filter: blur(4px); /* controls blur strength */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    border-radius: 40px; /* optional */
 }
 
 .carousel-subtitle {
@@ -31,10 +48,48 @@
     margin: 0 auto;
 }
 
-/* Carousel Wrapper - No buttons in continuous mode, but keep same padding for consistent card sizing */
+/* Carousel Wrapper */
 .carousel-wrapper {
     position: relative;
     padding: 0 60px; /* Match pagination mode for consistent card widths */
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--bg-light);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
 }
 
 /* Carousel Track Container */
@@ -60,7 +115,7 @@
 /* Carousel Cards */
 .carousel-card {
     min-width: calc(33.333% - 14px);
-    background-color: var(--bg-color);
+    background-color: var(--secondary-color);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -93,16 +148,50 @@
 .card-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-light);
     margin-bottom: 0.75rem;
 }
 
 .card-description {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex-grow: 1;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.card-list li {
+    font-size: 1.125rem;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 0.25rem 0.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-list li:last-child {
+    margin-bottom: 0;
+}
+
+.card-list li::before {
+    content: "•";
+    color: var(--bg-light);
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: -0.1em;
 }
 
 .card-link {
@@ -136,6 +225,11 @@
         padding: 0 50px; /* Match pagination button spacing */
     }
     
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
     .carousel-card {
         min-width: 100%;
     }
@@ -157,6 +251,11 @@
 @media (max-width: 480px) {
     .carousel-wrapper {
         padding: 0 35px; /* Match pagination button spacing */
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
     }
     
     .carousel-container {

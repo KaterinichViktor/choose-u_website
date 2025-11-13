@@ -149,6 +149,36 @@
     flex-grow: 1;
 }
 
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.card-list li {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-list li:last-child {
+    margin-bottom: 0;
+}
+
+.card-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: -0.1em;
+}
+
 .card-link {
     color: var(--primary-color);
     font-weight: 600;
