@@ -9,11 +9,9 @@
    COLOR THEMES - Switch between palettes
    ======================================== */
 
-/* Theme 1 - Forest Green */
-:root,
 
-/* Theme 4 - Dark Green Forest */
-[data-theme="theme3"] {
+:root,
+[data-theme="main-theme"] {
     --primary-color: #132A13;    
     --secondary-color: #31572C;  
     --accent-color: #b6c53a;        
