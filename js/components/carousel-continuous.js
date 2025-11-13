@@ -36,16 +36,43 @@ function initCarouselContinuous() {
             });
         }
         
-        // Calculate dimensions
-        const allCards = Array.from(track.children);
-        cardWidth = allCards[0].offsetWidth;
-        setWidth = (cardWidth + gap) * originalCards.length;
+        // Force reflow to ensure elements are rendered with proper dimensions
+        void track.offsetHeight;
         
-        // Start in the middle set (Set 2)
-        currentPosition = setWidth;
-        track.style.transform = `translateX(-${currentPosition}px)`;
-        
-        console.log('Infinite loop setup: 3 sets,', originalCards.length, 'cards each, setWidth:', setWidth);
+        // Small delay to ensure CSS is applied
+        requestAnimationFrame(() => {
+            // Calculate dimensions using getBoundingClientRect for accuracy
+            const allCards = Array.from(track.children);
+            if (allCards.length === 0) return;
+            
+            const firstCard = allCards[0];
+            const cardRect = firstCard.getBoundingClientRect();
+            cardWidth = cardRect.width;
+            
+            // Calculate gap from computed style
+            const trackStyle = window.getComputedStyle(track);
+            gap = parseFloat(trackStyle.gap) || 20;
+            
+            // Validate dimensions
+            if (cardWidth <= 0) {
+                console.warn('Card width is 0, retrying...');
+                setTimeout(() => setupInfiniteLoop(), 100);
+                return;
+            }
+            
+            setWidth = (cardWidth + gap) * originalCards.length;
+            
+            // Start in the middle set (Set 2)
+            currentPosition = setWidth;
+            track.style.transform = `translateX(-${currentPosition}px)`;
+            
+            // Apply translations to cloned cards
+            if (window.updateTranslations) {
+                setTimeout(() => window.updateTranslations(), 50);
+            }
+            
+            console.log('Infinite loop setup: 3 sets,', originalCards.length, 'cards each, cardWidth:', cardWidth, 'gap:', gap, 'setWidth:', setWidth);
+        });
     }
     
     // Continuous scroll animation
@@ -144,11 +171,36 @@ function initCarouselContinuous() {
     
     // Handle window resize
     let resizeTimeout;
+    let lastWidth = window.innerWidth;
+    
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
+        
+        // Only recalculate if width actually changed (ignore mobile browser toolbar changes)
+        const currentWidth = window.innerWidth;
+        if (Math.abs(currentWidth - lastWidth) < 5) {
+            return;
+        }
+        lastWidth = currentWidth;
+        
         resizeTimeout = setTimeout(() => {
+            console.log('Window resized, recalculating carousel dimensions...');
+            
+            // Pause scrolling during recalculation
+            const wasInteracting = isUserInteracting;
+            isUserInteracting = true;
+            
+            // Stop animation
+            stopScroll();
+            
             // Recalculate and reset to middle set
             setupInfiniteLoop();
+            
+            // Wait a bit longer, then restart
+            setTimeout(() => {
+                isUserInteracting = wasInteracting;
+                startScroll();
+            }, 300);
         }, 250);
     });
     
@@ -209,15 +261,33 @@ function initCarouselContinuous() {
     
     // Initialize
     track.style.transition = 'none'; // Remove snap transitions
-    setupInfiniteLoop();
-    startScroll();
     
-    console.log('Carousel (Continuous) initialized with', originalCards.length, 'original cards');
+    // Small delay to ensure DOM is fully ready
+    setTimeout(() => {
+        setupInfiniteLoop();
+        startScroll();
+        console.log('Carousel (Continuous) initialized with', originalCards.length, 'original cards');
+    }, 100);
 }
 
-// Auto-initialize
+// Auto-initialize - wait for translations to be ready
 if (typeof window !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', initCarouselContinuous);
+    function init() {
+        if (window.translationsReady) {
+            initCarouselContinuous();
+        } else {
+            // Wait for translations to load
+            document.addEventListener('translationsLoaded', () => {
+                setTimeout(initCarouselContinuous, 100);
+            }, { once: true });
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 }
 
 // Expose for manual initialization

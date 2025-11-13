@@ -24,6 +24,11 @@ function initLanguageSwitcher() {
             translations = data;
             // Set initial language
             changeLanguage(currentLang, false); // false = don't animate on page load
+            
+            // Signal that translations are ready
+            window.translationsReady = true;
+            document.dispatchEvent(new Event('translationsLoaded'));
+            console.log('Translations loaded for language:', currentLang);
         })
         .catch(error => console.error('Error loading translations:', error));
 
@@ -74,6 +79,13 @@ function initLanguageSwitcher() {
             btn.textContent = langDisplayCodes[lang] || lang.toUpperCase();
         });
     }
+    
+    // Expose changeLanguage globally for carousel reinit
+    window.updateTranslations = function() {
+        if (currentLang && translations[currentLang]) {
+            changeLanguage(currentLang, false);
+        }
+    };
 
     // Language Dropdown - Desktop
     const langDropdown = document.getElementById('langDropdown');

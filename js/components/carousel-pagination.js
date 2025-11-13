@@ -23,8 +23,15 @@ function initCarouselPagination() {
     
     // Get card width including gap
     function getCardWidth() {
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 20; // Match CSS gap
+        if (!cards[0]) return 0;
+        
+        const cardRect = cards[0].getBoundingClientRect();
+        const cardWidth = cardRect.width;
+        
+        // Calculate gap from computed style
+        const trackStyle = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyle.gap) || 20;
+        
         return cardWidth + gap;
     }
     
@@ -225,13 +232,31 @@ function initCarouselPagination() {
     
     // Handle window resize
     let resizeTimeout;
+    let lastWidth = window.innerWidth;
+    
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
+        
+        // Only recalculate if width actually changed (ignore mobile browser toolbar changes)
+        const currentWidth = window.innerWidth;
+        if (Math.abs(currentWidth - lastWidth) < 5) {
+            return;
+        }
+        lastWidth = currentWidth;
+        
         resizeTimeout = setTimeout(() => {
-            // Recalculate position without animation
-            currentIndex = Math.min(currentIndex, getMaxIndex());
-            initializeIndicators();
-            updateCarousel(false);
+            console.log('Window resized, recalculating carousel pagination...');
+            
+            // Force reflow
+            void track.offsetHeight;
+            
+            // Use requestAnimationFrame to ensure proper timing
+            requestAnimationFrame(() => {
+                // Recalculate position without animation
+                currentIndex = Math.min(currentIndex, getMaxIndex());
+                initializeIndicators();
+                updateCarousel(false);
+            });
         }, 250);
     });
     
