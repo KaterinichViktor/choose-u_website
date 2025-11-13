@@ -116,24 +116,26 @@ function initLanguageSwitcher() {
     const mobileLangDropdown = document.getElementById('mobileLangDropdown');
     const mobileLangButton = mobileLangDropdown?.querySelector('.mobile-dropdown-button');
     
-    if (mobileLangButton) {
-        mobileLangButton.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileLangDropdown.classList.toggle('open');
-        });
-    }
-
+    // Mobile dropdown toggle is handled by navigation.js
+    // We just need to handle the language item clicks
+    
     // Mobile Language Dropdown Items
     const mobileLangItems = document.querySelectorAll('#mobileLangDropdown .mobile-dropdown-item');
     mobileLangItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const selectedLang = this.getAttribute('data-lang');
+            console.log('Mobile language clicked:', selectedLang);
             
             // Change language using the translation system
             changeLanguage(selectedLang);
             
             // Close dropdown
-            mobileLangDropdown.classList.remove('open');
+            if (mobileLangDropdown) {
+                mobileLangDropdown.classList.remove('open');
+            }
         });
     });
 

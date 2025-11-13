@@ -75,9 +75,15 @@ function initCarouselContinuous() {
         });
     }
     
+    // Check if we should auto-scroll (disable on mobile single-card view)
+    function shouldAutoScroll() {
+        // On very small screens (mobile), disable auto-scroll to prevent card cutting
+        return window.innerWidth > 640;
+    }
+    
     // Continuous scroll animation
     function continuousScroll() {
-        if (!isUserInteracting) {
+        if (!isUserInteracting && shouldAutoScroll()) {
             currentPosition += CONTINUOUS_SCROLL_SPEED;
             
             // Seamless infinite loop logic:
@@ -209,18 +215,23 @@ function initCarouselContinuous() {
     const nextBtn = document.querySelector('.carousel-btn-next');
     
     function manualScroll(direction) {
+        // Calculate scroll amount (always exactly one card + gap for snapping)
         const scrollAmount = cardWidth + gap;
         
         // Pause auto-scroll
         pauseScroll();
         
-        // Calculate target position
+        // Calculate target position and snap to nearest card
         let targetPosition = currentPosition;
         if (direction === 'next') {
             targetPosition += scrollAmount;
         } else {
             targetPosition -= scrollAmount;
         }
+        
+        // Snap to nearest card boundary to ensure full card visibility
+        const cardPosition = Math.round((targetPosition - setWidth) / scrollAmount);
+        targetPosition = setWidth + (cardPosition * scrollAmount);
         
         // Apply smooth transition
         track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';

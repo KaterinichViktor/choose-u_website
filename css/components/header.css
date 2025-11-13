@@ -307,7 +307,7 @@
 .mobile-dropdown-item {
     display: block;
     padding: 0.5rem 0;
-    color: var(--text-light);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.2s;
     background: none;
