@@ -13,10 +13,22 @@ function initLanguageSwitcher() {
     let currentLang = localStorage.getItem('language') || 'ua'; // Default to Ukrainian
 
     // Load translations from JSON file
-    // Determine the correct path based on current page location
-    const translationsPath = window.location.pathname.includes('/components/') 
-        ? '../js/translations.json' 
-        : './js/translations.json';
+    // Determine the correct path relative to the script location (works on nested pages)
+    let translationsPath = './js/translations.json';
+    try {
+        const currentScript = document.currentScript || document.querySelector('script[src*="language-switcher.js"]');
+        if (currentScript) {
+            const scriptUrl = new URL(currentScript.src, window.location.href);
+            translationsPath = new URL('../translations.json', scriptUrl).href;
+        } else {
+            // Fallback: compute based on page depth
+            const depth = Math.max(window.location.pathname.split('/').filter(Boolean).length - 1, 0);
+            const prefix = depth ? '../'.repeat(depth) : './';
+            translationsPath = `${prefix}js/translations.json`;
+        }
+    } catch (err) {
+        console.warn('Could not determine translations path, using default.', err);
+    }
     
     fetch(translationsPath)
         .then(response => response.json())

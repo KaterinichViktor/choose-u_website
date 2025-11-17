@@ -42,6 +42,9 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Smooth theme transitions for all elements */
@@ -141,7 +144,8 @@ a:hover {
 
 /* Main Content */
 main {
-    min-height: calc(100vh - 80px - 300px);
+    flex: 1 0 auto;
+    width: 100%;
 }
 
 /* Utility Classes */

@@ -2,7 +2,7 @@
 
 /* Main Header */
 .site-header {
-    position: relative;
+    /* position: relative; */
     z-index: 50;
     margin: 0 auto 40px auto;
     /* margin-left: 20px;
@@ -18,7 +18,7 @@
     border-radius: 20px;
     /* background-color: var(--bg-color); */
 
-    position: relative;
+    /* position: relative; */
 }
 
 /* Header Content - Main Row */
@@ -35,12 +35,27 @@
     align-items: center;
 }
 
+.header-logo h3{
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.header-logo-link {
+    position: relative;
+}
+
 .logo-image {
     height: 60px;
-    width: auto;
+    width: 60px;
     border-radius: 50%;
     position: absolute;
-    left: 1.2rem;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 150;
@@ -51,9 +66,10 @@
 /* Logo positioning on mobile devices */
 @media (max-width: 1023px) {
     .logo-image {
-        height: 50px;
-        left: 1rem;
-        top: 1.5rem;
+        width: 60px;
+        height: 60px;
+        left: 0;
+        top: 0;
         transform: translateY(0);
     }
     

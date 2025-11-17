@@ -43,9 +43,12 @@
 
 /* Hero Logo Link */
 .header-logo a {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
+
+
+
 
 /* Mobile Dropdown Arrow SVG */
 .mobile-dropdown-button .dropdown-arrow {

@@ -1,6 +1,7 @@
 {
   "en": {
     "site_title": "Choose You",
+    "header_logo_text": "PO \"Choose You\"",
     "hero_title": "Choose You",
     "hero_subtitle": "We are about people. <br> About families. <br> About love and restoration.",
     "section2_title": "We are a team of people who believe in the power of love, kindness, and unity.",
@@ -51,6 +52,7 @@
   },
   "ua": {
     "site_title": "Обираю Тебе",
+    "header_logo_text": "ГО \"Обираю Тебе\"",
     "hero_title": "Обираю Тебе",
     "hero_subtitle": "Ми про людей. <br> Про родини. <br> Про любов і відновлення.",
     "section2_title": "Ми — команда людей, які вірять у силу любові, доброти та єдності.",
