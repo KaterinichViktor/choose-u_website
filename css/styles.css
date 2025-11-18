@@ -12,9 +12,11 @@
 /* @import url('components/carousel.css'); */
 @import url('components/carousel-continuous.css');
 @import url('components/spinner.css');
+@import url('components/lightbox.css');
 
 /* Page-Specific Styles */
 @import url('pages/index.css');
+@import url('pages/about.css');
 
 /* Add more page imports as needed:
    @import url('pages/about.css');

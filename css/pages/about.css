@@ -1,0 +1,119 @@
+
+
+
+.about-color-box-1 {
+    /* background-color: var(--bg-light); */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 20px;
+
+    background: linear-gradient(45deg,transparent 34%, #556B2F 35%, #556B2F 40%, transparent 41%, transparent 59%, #556B2F  60%, #556B2F 65%, transparent 66%),linear-gradient(135deg,transparent 34%, #556B2F 35%, #556B2F 40%, transparent 41%, transparent 59%, #556B2F  60%, #556B2F 65%, transparent 66%);
+    background-size: 6em 6em;
+    background-color: #C6D870;
+    opacity: 1
+}
+
+.about-section-1 {
+    min-height: 300px;
+    margin-bottom: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+
+}
+
+.about-section-1-button {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    margin: 20px;
+}
+
+.about-color-box-2 {
+    background-color: var(--bg-color);
+    border: 4px solid var(--bg-light);
+    border-radius: 10px;
+}
+
+.about-section-2 {
+    min-height: 300px;
+    /* margin-bottom: 40px; */
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.about-section-2 h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--text-light);
+}
+
+.about-section-2-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.about-section-2-item {
+    height: 50px;
+    width: 200px;
+    flex-basis: calc(50% - 20px);
+    background-color: var(--bg-light);
+
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+

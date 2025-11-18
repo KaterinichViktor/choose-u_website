@@ -48,7 +48,10 @@
     "footer_contacts_heading": "Contacts",
     "footer_email": "go.choose.you@gmail.com",
     "footer_phone": "+38 (067) 321 67 29",
-    "footer_copyright": "2025 ChooseU. All rights reserved."
+    "footer_copyright": "2025 ChooseU. All rights reserved.",
+
+    "about_section_1_title": "Documents",
+    "about_section_2_title": "Reports"
   },
   "ua": {
     "site_title": "Обираю Тебе",
@@ -99,7 +102,10 @@
     "footer_contacts_heading": "Контакти",
     "footer_email": "go.choose.you@gmail.com",
     "footer_phone": "+38 (067) 321 67 29",
-    "footer_copyright": "2025 ChooseU. Всі права захищені."
+    "footer_copyright": "2025 ChooseU. Всі права захищені.",
+
+    "about_section_1_title": "Документи",
+    "about_section_2_title": "Звіти"
   }
 }
 

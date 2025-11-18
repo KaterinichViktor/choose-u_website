@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox Example - Choose You</title>
+    <link rel="icon" type="image/x-icon" href="./public/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <main>
+        <div style="max-width: 1400px; margin: 0 auto; padding: 2rem;">
+            <h1 style="text-align: center; margin-bottom: 3rem;">Lightbox Component Examples</h1>
+
+            <!-- Image Gallery Example -->
+            <section style="margin-bottom: 4rem;">
+                <h2>Image Gallery (clickable thumbnails)</h2>
+                <p>Click any thumbnail to open the lightbox. Use arrow keys or navigation buttons to browse.</p>
+                
+                <div class="lightbox-gallery">
+                    <!-- Replace these with your actual images -->
+                    <img src="https://picsum.photos/400/300?random=1" alt="Sample Image 1" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="0">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Sample Image 2" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="1">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Sample Image 3" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="2">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Sample Image 4" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="3">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Sample Image 5" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="4">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Sample Image 6" class="gallery-thumbnail" data-lightbox="demo-gallery" data-index="5">
+                </div>
+            </section>
+
+            <!-- Button Trigger Example -->
+            <section style="margin-bottom: 4rem;">
+                <h2>Image Gallery Triggered by Button</h2>
+                <p>The button below opens a gallery defined entirely via <code>data-lightbox-items</code>.</p>
+
+                <button
+                    class="btn-primary"
+                    style="padding: 1rem 2rem; font-size: 1.1rem; cursor: pointer;"
+                    data-lightbox-trigger="mission-gallery"
+                    data-lightbox-items='[
+                        {"src":"https://picsum.photos/600/800?random=11","alt":"Story 1"},
+                        {"src":"https://picsum.photos/600/800?random=12","alt":"Story 2"},
+                        {"src":"https://picsum.photos/600/800?random=13","alt":"Story 3"}
+                    ]'>
+                    View Mission Stories
+                </button>
+            </section>
+
+            <!-- PDF Example -->
+            <section style="margin-bottom: 4rem;">
+                <h2>PDF Lightbox</h2>
+                <p>Open a PDF in the lightbox with the dedicated full-height layout.</p>
+                
+                <button class="btn-primary" data-lightbox-pdf="/991_10013_25.pdf" style="padding: 1rem 2rem; font-size: 1.1rem; cursor: pointer;">
+                    View Sample PDF
+                </button>
+            </section>
+
+            <!-- Code Examples -->
+            <section style="margin-bottom: 4rem;">
+                <h2>How to Use</h2>
+                
+                <h3 style="margin-top: 2rem;">1. Include the CSS and JS</h3>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;link rel="stylesheet" href="./css/styles.css"&gt;
+&lt;script src="./js/components/lightbox.js"&gt;&lt;/script&gt;</code></pre>
+
+                <h3 style="margin-top: 2rem;">2. Add the Lightbox HTML to your page (before closing &lt;/body&gt;)</h3>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;!-- Lightbox Component --&gt;
+&lt;div id="lightbox" class="lightbox" aria-hidden="true"&gt;
+    &lt;div class="lightbox-backdrop"&gt;&lt;/div&gt;
+    &lt;div class="lightbox-content"&gt;
+        &lt;button class="lightbox-close" aria-label="Close"&gt;...&lt;/button&gt;
+        &lt;div class="lightbox-media"&gt;
+            &lt;img class="lightbox-image" src="" alt="" style="display: none;"&gt;
+            &lt;iframe class="lightbox-pdf" src="" style="display: none;"&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+        &lt;button class="lightbox-prev" aria-label="Previous"&gt;...&lt;/button&gt;
+        &lt;button class="lightbox-next" aria-label="Next"&gt;...&lt;/button&gt;
+        &lt;div class="lightbox-counter"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="lightbox-thumbnails"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script src="./js/components/lightbox.js"&gt;&lt;/script&gt;</code></pre>
+                <p style="margin-top: 1rem;"><em>Note: SVG icons omitted for brevity. See full HTML at the bottom of this page.</em></p>
+
+                <h3 style="margin-top: 2rem;">3. For Image Galleries</h3>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;img src="image1.jpg" alt="Image 1" data-lightbox="gallery-name" data-index="0"&gt;
+&lt;img src="image2.jpg" alt="Image 2" data-lightbox="gallery-name" data-index="1"&gt;
+&lt;img src="image3.jpg" alt="Image 3" data-lightbox="gallery-name" data-index="2"&gt;</code></pre>
+
+                <h3 style="margin-top: 2rem;">4. Trigger Gallery from Any Element</h3>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;button
+    data-lightbox-trigger="team-gallery"
+    data-lightbox-items='[
+        {"src":"photo1.jpg","alt":"Team 1"},
+        {"src":"photo2.jpg","alt":"Team 2"}
+    ]'
+&gt;View Team&lt;/button&gt;</code></pre>
+                <p style="margin-top: 0.5rem;">Omit <code>data-lightbox-items</code> if thumbnails with the same <code>data-lightbox</code> already exist.</p>
+
+                <h3 style="margin-top: 2rem;">5. For PDFs</h3>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;button data-lightbox-pdf="./path/to/document.pdf"&gt;View PDF&lt;/button&gt;
+&lt;a href="#" data-lightbox-pdf="./path/to/document.pdf"&gt;Open Document&lt;/a&gt;</code></pre>
+
+                <h3 style="margin-top: 2rem;">Features</h3>
+                <ul style="line-height: 1.8;">
+                    <li>✅ Display images in full-screen overlay</li>
+                    <li>✅ Display PDFs with dedicated full-height iframe layout</li>
+                    <li>✅ <strong>Thumbnail strip at bottom</strong> (auto-scrolls to active thumbnail)</li>
+                    <li>✅ Click thumbnails to jump to any page</li>
+                    <li>✅ Trigger galleries from buttons or links</li>
+                    <li>✅ Navigation buttons (prev/next)</li>
+                    <li>✅ Keyboard navigation (arrow keys, Escape)</li>
+                    <li>✅ Download button for PDFs</li>
+                    <li>✅ Close button and backdrop click to close</li>
+                    <li>✅ Page counter (e.g., "2 / 11")</li>
+                    <li>✅ Buttons hidden on first/last items</li>
+                    <li>✅ Active thumbnail highlighted</li>
+                    <li>✅ Fully responsive</li>
+                    <li>✅ Smooth animations</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lightbox Component -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="lightbox-media">
+                <img class="lightbox-image" src="" alt="" style="display: none;">
+                <iframe class="lightbox-pdf" src="" style="display: none;"></iframe>
+            </div>
+            <button class="lightbox-prev" aria-label="Previous">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="lightbox-next" aria-label="Next">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="lightbox-counter"></div>
+        </div>
+        <div class="lightbox-thumbnails"></div>
+    </div>
+
+    <script src="./js/components/lightbox.js"></script>
+</body>
+</html>
+

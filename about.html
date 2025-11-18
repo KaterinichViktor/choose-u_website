@@ -18,7 +18,7 @@
 
         <!-- Main Content -->
         <main>
-            <div class="color-box-1">
+            <div class="about-color-box-1">
                 <!-- Header -->
                 <header class="site-header">
                     <nav class="header-nav">
@@ -123,6 +123,50 @@
                         </div>
                     </nav>
                 </header>
+
+                <section class="about-section-1">
+                    <h1 data-i18n="about_section_1_title"></h1>
+                    
+                    <div class="about-section-1-content">
+                        <button
+                            class="about-section-1-button"
+                            data-i18n="about_section_1_button_1"
+                            data-lightbox-trigger="statute-gallery"
+                            data-lightbox-items='[{"src":"../public/images/hero/nature_2.jpg","alt":"Story 1"},{"src":"../public/images/hero/nature.jpg","alt":"Story 2"}]'>
+                            Статут
+                        </button>
+                    </div>                    
+                </section>
+            </div>
+            <div class="about-color-box-2">
+                <section class="about-section-2">
+                    <h2 data-i18n="about_section_2_title"></h2>
+
+                    <ul class="about-section-2-list">
+                        <li class="about-section-2-item">
+                            <a href="/991_10013_25.pdf" class="about-section-2-link" target="_blank" rel="noopener noreferrer">
+                                Звіт 1
+                            </a>
+                        </li>
+                        <li class="about-section-2-item">
+                            <a href="/991_10013_25.pdf" class="about-section-2-link" target="_blank" rel="noopener noreferrer">
+                                Звіт 2
+                            </a>
+                        </li>
+                        <li class="about-section-2-item">
+                            <a href="/991_10013_25.pdf" class="about-section-2-link" target="_blank" rel="noopener noreferrer">
+                                Звіт 3
+                            </a>
+                        </li>
+                        <li class="about-section-2-item">
+                            <a href="/991_10013_25.pdf" class="about-section-2-link" target="_blank" rel="noopener noreferrer">
+                                Звіт 4
+                            </a>
+                        </li>
+
+                    </ul>
+                </section>
+
             </div>
         </main>
 
@@ -179,6 +223,35 @@
         </div>
     </footer>
 
+    <!-- Lightbox Component -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="lightbox-media">
+                <img class="lightbox-image" src="" alt="" style="display: none;">
+                <iframe class="lightbox-pdf" src="" style="display: none;"></iframe>
+            </div>
+            <button class="lightbox-prev" aria-label="Previous">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="lightbox-next" aria-label="Next">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="lightbox-counter"></div>
+        </div>
+        <div class="lightbox-thumbnails"></div>
+    </div>
+
     
 
     <!-- JavaScript Components -->
@@ -189,5 +262,6 @@
     <script src="../js/main.js"></script>
 
     <script src="../js/components/carousel-continuous.js"></script>
+    <script src="../js/components/lightbox.js"></script>
 </body>
 </html>

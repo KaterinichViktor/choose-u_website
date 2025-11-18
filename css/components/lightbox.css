@@ -1,0 +1,395 @@
+/* Lightbox Component Styles */
+
+/* Main lightbox container - full screen overlay */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
+    box-sizing: border-box;
+    gap: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Active state - visible lightbox */
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Semi-transparent backdrop */
+.lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+/* Main content container */
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-width: 1400px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 80px 0 80px;
+    box-sizing: border-box;
+}
+
+/* Media container - holds image or PDF */
+.lightbox-media {
+    width: 80%;
+    height: 90%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 4px;
+    /* box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5); */
+}
+
+/* Image styling */
+.lightbox-image {
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* PDF iframe styling */
+.lightbox-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* PDF specific layout */
+/* .lightbox.is-pdf {
+    padding: 20px 20px 0;
+} */
+
+.lightbox.is-pdf .lightbox-content {
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.lightbox.is-pdf .lightbox-media {
+    width: 90vw;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+}
+
+.lightbox.is-pdf .lightbox-pdf {
+    width: 90vw;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Close button - top right */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    z-index: 11;
+    padding: 0;
+}
+
+.lightbox-close svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 3;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+/* Navigation buttons - left and right */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: none;
+    background: transparent;
+    border: none;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    z-index: 10;
+    padding: 0;
+}
+
+.lightbox-prev {
+    left: 0;
+}
+
+.lightbox-next {
+    right: 0;
+}
+
+.lightbox-prev svg,
+.lightbox-next svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 2;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    opacity: 0.7;
+}
+
+/* Hide navigation buttons when not applicable */
+.lightbox-prev.hidden,
+.lightbox-next.hidden {
+    opacity: 0;
+    cursor: default;
+}
+
+/* Counter - hidden by default, shown above thumbnails if needed */
+.lightbox-counter {
+    display: none;
+}
+
+/* Thumbnail strip at the bottom */
+.lightbox-thumbnails {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 130px;
+    flex-shrink: 0;
+    z-index: 10000;
+    display: none;
+    background: transparent;
+    padding: 10px 80px 0 80px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+/* Show thumbnails when active */
+.lightbox.active .lightbox-thumbnails.has-items {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Thumbnail wrapper */
+.lightbox-thumbnails-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Individual thumbnail */
+.lightbox-thumbnail {
+    flex-shrink: 0;
+    width: 70px;
+    height: 90px;
+    background: white;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    /* border: 2px solid transparent; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-thumbnail:hover {
+    opacity: 0.8;
+}
+
+.lightbox-thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.2s ease;
+}
+
+.lightbox-thumbnail.active {
+    border-color: white;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.897);
+}
+
+.lightbox-thumbnail.active::after {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.lightbox-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Thumbnail page number overlay - hidden by default */
+.lightbox-thumbnail-number {
+    display: none;
+}
+
+/* Custom scrollbar for thumbnails */
+.lightbox-thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+
+.lightbox-thumbnails::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.lightbox-thumbnails::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.lightbox-thumbnails::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Gallery thumbnail styling example */
+.lightbox-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 10px 10px 0 10px;
+    }
+
+    .lightbox-content {
+        padding: 50px 50px 20px 50px;
+    }
+
+    .lightbox-thumbnails {
+        height: 100px;
+        padding: 15px 50px;
+    }
+
+    .lightbox-thumbnail {
+        width: 55px;
+        height: 75px;
+    }
+
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .lightbox-close svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .lightbox-download {
+        width: 36px;
+        height: 36px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 50px;
+        height: 100%;
+    }
+
+    .lightbox-prev svg,
+    .lightbox-next svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-content {
+        padding: 50px 40px 10px 40px;
+    }
+
+    .lightbox-thumbnails {
+        height: 80px;
+        padding: 10px 40px;
+        gap: 8px;
+    }
+
+    .lightbox-thumbnail {
+        width: 45px;
+        height: 60px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 100%;
+    }
+
+    .lightbox-prev svg,
+    .lightbox-next svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
